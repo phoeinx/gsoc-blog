@@ -1,6 +1,6 @@
 ---
-title: "The beginning"
+title: "The Beginning or Community Bonding"
 date: 2023-05-23
 ---
 
-In the beginning there is the Community Bonding period.
+Placeholder: Post about Community Bonding Period
