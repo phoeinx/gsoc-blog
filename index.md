@@ -1,6 +1,9 @@
 ---
-title: GSoC 23 - Here we go!
+title: GSoC 23 - A Contributors' Experience
 ---
 
-Hi, this is my blog! 
+Hi there! 
 
+I am phoeinx, a Computer Science student from Germany who has been selected for a Google Summer of Code project and will contribute to MariaDB Columnstore during this summer.
+
+This blog serves as a progress tracker of things that I learnt, coded and felt challenged by. Have a look around!
