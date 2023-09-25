@@ -1,6 +1,24 @@
 ---
-title: "Final submission of my GSoC'23 project at MariaDB Columnstore"
+title: "Final submission and Overview of my GSoC'23 Project at MariaDB Columnstore"
 date: 2023-09-25
 ---
 
-Placeholder: Final Submission
+## Project Summary
+
+## What I did
+
+### Documenting
+
+### Developing
+
+### Designing/Researching
+
+## Current State
+
+## What's left to Do
+
+## Merged PRs
+
+## Key Learnings
+
+## Acknowledgements
