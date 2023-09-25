@@ -23,6 +23,8 @@ Additionally, I fixed other bugs and improved documentation and the development 
 
 ### 2.3 Designing/Researching
 
+- **Vectorized Hash-Map Lookup** : For its hash-based aggregation algorithm MCS uses a dedicated Robin Hood hash map implementation. Recent development has shown the multiple leading hash map implementations now work with vectorized lookup (e.g. `boost::unordered_flat_map` [1] ). Recent research on benchmarking different hash map implementation approaches has shown that the best performing considered vectorized implementation (Bucket-Based Comparison) outperformed the best scalar implementation against which it was compared (Robin Hood Hashing) by "1.4x to 3x (2.1x on average) for high load factors".[2] While on the positive side Robin Hood hashing showed to be the best non-vectorized scheme, the paper suggests relevant potential for hash map lookup speedup when switching to a vectorized scheme. However, Robin Hood hashing uses relocating open-addressing and the approach from `boost` (which uses non-relocating quadratic probing) is not directly transferable. 
+
 
 ## 3. Current State & What's left to Do
 Section 4 shows the current status of my PRs. My work on the casting issues and documentation is merged and I'll continue work on the disk-based aggregation PRs to see them merged.
@@ -38,7 +40,9 @@ Section 4 shows the current status of my PRs. My work on the casting issues and 
 
 
 ## 5. Key Learnings
-- 
+- If you have to understand multi-threaded execution, but have the option to run (and understand) single-threaded execution first, do that.
+- Whiteboards (in plural) are your best friend when understanding a complex database - especially being able to refer back to notes about other classes/earlier execution steps is worth a lot!
+- Every piece of code can be understood.
 
 ## 6. Acknowledgements
 
@@ -47,3 +51,10 @@ First of all  I want to thank my mentor Roman (@drruty) for making a GSoC projec
 A big thank you also the the MariaDB foundation for hosting GSoC projects like mine and enabling me to visit the MariaDB Unconference in October.
 
 Last, I want to thank Google for creating and organizing GSoC. It's a great program and I've been very happy to participate. 
+
+
+## 7. Sources
+
+[1] "Inside boost::unordered_flat_map" - http://bannalia.blogspot.com/2022/11/inside-boostunorderedflatmap.html
+
+[2] Maximilian Böther, Lawrence Benson, Ana Klimovic, and Tilmann Rabl. Analyzing Vectorized Hash Tables Across CPU Architectures. PVLDB, 16(11): 2755 - 2768, 2023. doi:10.14778/3611479.3611485
